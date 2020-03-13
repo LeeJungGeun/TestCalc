@@ -65,7 +65,6 @@ BEGIN_MESSAGE_MAP(CTestCalcDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BUTTON2, &CTestCalcDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -154,33 +153,26 @@ HCURSOR CTestCalcDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
-
-
-
-BOOL CAboutDlg::OnCommand(WPARAM wParam, LPARAM lParam)
+BOOL CTestCalcDlg::OnCommand(WPARAM wParam, LPARAM lParam)
 {
 	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
+	if (B_Number0 <= wParam&&wParam <= B_Number9) //솔루션탐색기 → Resource.h → 숫자버튼 매크로 확인
+	{
+		CString str, number_str, str2; //문자열
+		number_str.Format(L"%d", wParam - B_Number0); //숫자'0'을 기준으로 잡는다
 
-		if (B_Number0 <= wParam&&wParam <= B_Number9) //솔루션탐색기 → Resource.h → 숫자버튼 매크로 확인
+		if (m_step == 0) //연산자가 눌리지 않았을경우
 		{
-			CString str, number_str, str2; //문자열
-			number_str.Format(L"%d", wParam - B_Number0); //숫자'0'을 기준으로 잡는다
-
-			if (m_step == 0) //연산자가 눌리지 않았을경우
-			{
-				GetDlgItemText(Print_Edit, str2); //에디트에 입력된값을 str변수에 저장
-			}
-			else if (m_step == 1)
-			{
-				GetDlgItemText(Print_Edit, str);
-				m_step = 0;
-				m_value = _wtof(str);
-			}
-			SetDlgItemText(Print_Edit, str2 + number_str); //str에 저장된 값에 숫자값을 더해 출력
+			GetDlgItemText(Print_EDIT, str2); //에디트에 입력된값을 str변수에 저장
 		}
-		return CDialogEx::OnCommand(wParam, lParam);
-
+		else if (m_step == 1)
+		{
+			GetDlgItemText(Print_EDIT, str);
+			m_step = 0;
+			m_value = _wtof(str);
+		}
+		SetDlgItemText(Print_EDIT, str2 + number_str); //str에 저장된 값에 숫자값을 더해 출력
+	}
 
 	return CDialogEx::OnCommand(wParam, lParam);
 }
