@@ -67,14 +67,14 @@ BEGIN_MESSAGE_MAP(CTestCalcDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-<<<<<<< HEAD
+
+	ON_BN_CLICKED(Minus, &CTestCalcDlg::OnBnClickedMinus)
+
 	ON_BN_CLICKED(IDC_BUTTON3, &CTestCalcDlg::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON4, &CTestCalcDlg::OnBnClickedButton4)
 	ON_BN_CLICKED(Multiply, &CTestCalcDlg::OnBnClickedMultiply)
 	ON_BN_CLICKED(Division, &CTestCalcDlg::OnBnClickedDivision)
-=======
-	ON_BN_CLICKED(Minus, &CTestCalcDlg::OnBnClickedMinus)
->>>>>>> PLMA
+
 END_MESSAGE_MAP()
 
 
@@ -188,20 +188,10 @@ BOOL CTestCalcDlg::OnCommand(WPARAM wParam, LPARAM lParam)
 }
 
 <<<<<<< HEAD
-
-
-
-void CTestCalcDlg::OnBnClickedMultiply()
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-=======
 void CTestCalcDlg::OnBnClickedPlus()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-
->>>>>>> PLMA
-	CString str, str2, omg;
+		CString str, str2, omg;
 
 	double m_value_two = GetDlgItemInt(Print_EDIT);
 	GetDlgItemText(Print_EDIT, omg);
@@ -216,44 +206,19 @@ void CTestCalcDlg::OnBnClickedPlus()
 	{
 		M_Operate(m_value_two);
 	}
-<<<<<<< HEAD
-	m_operater_flag = 2;
-=======
 	m_operater_flag = 0;
->>>>>>> PLMA
 	m_step = 1;
 
 	GetDlgItemText(Print_EDIT, str2);
 	GetDlgItemText(Print_Edit2, str);
-<<<<<<< HEAD
-	SetDlgItemText(Print_Edit2, str + str2 + '*');
-=======
 	SetDlgItemText(Print_Edit2, str + str2 + '+');
->>>>>>> PLMA
 
 	omg.Format(L"%f", m_value);
 	omg.TrimRight(L"0");
 	omg.TrimRight(L".");
 	SetDlgItemText(Print_EDIT, omg);
-<<<<<<< HEAD
-	ex.Format(L"%g", m_value_two);
-	a.push_back(ex);
-	count++;
-	ex = "*";
-	a.push_back(ex);
-	count++;
-	muldicount++;
 }
-
-
-void CTestCalcDlg::OnBnClickedDivision()
-=======
-}
-
-
-
-void CTestCalcDlg::OnBnClickedMinus()
->>>>>>> PLMA
+void CTestCalcDlg::OnBnClickedMultiply()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	CString str, str2, omg;
@@ -271,25 +236,93 @@ void CTestCalcDlg::OnBnClickedMinus()
 	{
 		M_Operate(m_value_two);
 	}
-<<<<<<< HEAD
-	m_operater_flag = 3;
-=======
-	m_operater_flag = 1;
->>>>>>> PLMA
+
+	m_operater_flag = 2;
+
 	m_step = 1;
 
 	GetDlgItemText(Print_EDIT, str2);
 	GetDlgItemText(Print_Edit2, str);
-<<<<<<< HEAD
-	SetDlgItemText(Print_Edit2, str + str2 + '/');
-=======
-	SetDlgItemText(Print_Edit2, str + str2 + '-');
->>>>>>> PLMA
+
+	SetDlgItemText(Print_Edit2, str + str2 + '*');
+
 
 	omg.Format(L"%f", m_value);
 	omg.TrimRight(L"0");
 	omg.TrimRight(L".");
-<<<<<<< HEAD
+	SetDlgItemText(Print_EDIT, omg);
+}
+
+void CTestCalcDlg::OnBnClickedMinus()
+
+	CString str, str2, omg;
+
+	double m_value_two = GetDlgItemInt(Print_EDIT);
+	GetDlgItemText(Print_EDIT, omg);
+	m_value_two = _wtof(omg);
+
+	m_count++;
+
+	if (m_count == 1) {
+		m_value = m_value_two;
+	}
+	else
+	{
+		M_Operate(m_value_two);
+	}
+	m_operater_flag = 1;
+	m_step = 1;
+
+	GetDlgItemText(Print_EDIT, str2);
+	GetDlgItemText(Print_Edit2, str);
+	SetDlgItemText(Print_Edit2, str + str2 + '-');
+
+	omg.Format(L"%f", m_value);
+	omg.TrimRight(L"0");
+	omg.TrimRight(L".");
+	SetDlgItemText(Print_EDIT, omg);
+	ex.Format(L"%g", m_value_two);
+	a.push_back(ex);
+	count++;
+	ex = "-";
+	a.push_back(ex);
+	count++;
+}
+
+
+void CTestCalcDlg::OnBnClickedDivision()
+
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	CString str, str2, omg;
+
+	double m_value_two = GetDlgItemInt(Print_EDIT);
+	GetDlgItemText(Print_EDIT, omg);
+	m_value_two = _wtof(omg);
+
+	m_count++;
+
+	if (m_count == 1) {
+		m_value = m_value_two;
+	}
+	else
+	{
+		M_Operate(m_value_two);
+	}
+
+	m_operater_flag = 3;
+	m_step = 1;
+
+	GetDlgItemText(Print_EDIT, str2);
+	GetDlgItemText(Print_Edit2, str);
+
+	SetDlgItemText(Print_Edit2, str + str2 + '/');
+
+
+	omg.Format(L"%f", m_value);
+	omg.TrimRight(L"0");
+	omg.TrimRight(L".");
+
 	SetDlgItemText(Print_Edit, omg);
 	ex.Format(L"%g", m_value_two);
 	a.push_back(ex);
@@ -298,13 +331,5 @@ void CTestCalcDlg::OnBnClickedMinus()
 	a.push_back(ex);
 	count++;
 	muldicount++;
-=======
-	SetDlgItemText(Print_EDIT, omg);
-	ex.Format(L"%g", m_value_two);
-	a.push_back(ex);
-	count++;
-	ex = "-";
-	a.push_back(ex);
-	count++;
->>>>>>> PLMA
+
 }
