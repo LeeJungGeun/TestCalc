@@ -6,6 +6,8 @@
 #include "TestCalc.h"
 #include "TestCalcDlg.h"
 #include "afxdialogex.h"
+#include <vector>
+#include <array>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -65,10 +67,14 @@ BEGIN_MESSAGE_MAP(CTestCalcDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+<<<<<<< HEAD
 	ON_BN_CLICKED(IDC_BUTTON3, &CTestCalcDlg::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON4, &CTestCalcDlg::OnBnClickedButton4)
 	ON_BN_CLICKED(Multiply, &CTestCalcDlg::OnBnClickedMultiply)
 	ON_BN_CLICKED(Division, &CTestCalcDlg::OnBnClickedDivision)
+=======
+	ON_BN_CLICKED(Minus, &CTestCalcDlg::OnBnClickedMinus)
+>>>>>>> PLMA
 END_MESSAGE_MAP()
 
 
@@ -181,6 +187,7 @@ BOOL CTestCalcDlg::OnCommand(WPARAM wParam, LPARAM lParam)
 	return CDialogEx::OnCommand(wParam, lParam);
 }
 
+<<<<<<< HEAD
 
 
 
@@ -188,6 +195,12 @@ void CTestCalcDlg::OnBnClickedMultiply()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+=======
+void CTestCalcDlg::OnBnClickedPlus()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+>>>>>>> PLMA
 	CString str, str2, omg;
 
 	double m_value_two = GetDlgItemInt(Print_EDIT);
@@ -203,17 +216,26 @@ void CTestCalcDlg::OnBnClickedMultiply()
 	{
 		M_Operate(m_value_two);
 	}
+<<<<<<< HEAD
 	m_operater_flag = 2;
+=======
+	m_operater_flag = 0;
+>>>>>>> PLMA
 	m_step = 1;
 
 	GetDlgItemText(Print_EDIT, str2);
 	GetDlgItemText(Print_Edit2, str);
+<<<<<<< HEAD
 	SetDlgItemText(Print_Edit2, str + str2 + '*');
+=======
+	SetDlgItemText(Print_Edit2, str + str2 + '+');
+>>>>>>> PLMA
 
 	omg.Format(L"%f", m_value);
 	omg.TrimRight(L"0");
 	omg.TrimRight(L".");
 	SetDlgItemText(Print_EDIT, omg);
+<<<<<<< HEAD
 	ex.Format(L"%g", m_value_two);
 	a.push_back(ex);
 	count++;
@@ -225,6 +247,13 @@ void CTestCalcDlg::OnBnClickedMultiply()
 
 
 void CTestCalcDlg::OnBnClickedDivision()
+=======
+}
+
+
+
+void CTestCalcDlg::OnBnClickedMinus()
+>>>>>>> PLMA
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	CString str, str2, omg;
@@ -242,16 +271,25 @@ void CTestCalcDlg::OnBnClickedDivision()
 	{
 		M_Operate(m_value_two);
 	}
+<<<<<<< HEAD
 	m_operater_flag = 3;
+=======
+	m_operater_flag = 1;
+>>>>>>> PLMA
 	m_step = 1;
 
 	GetDlgItemText(Print_EDIT, str2);
 	GetDlgItemText(Print_Edit2, str);
+<<<<<<< HEAD
 	SetDlgItemText(Print_Edit2, str + str2 + '/');
+=======
+	SetDlgItemText(Print_Edit2, str + str2 + '-');
+>>>>>>> PLMA
 
 	omg.Format(L"%f", m_value);
 	omg.TrimRight(L"0");
 	omg.TrimRight(L".");
+<<<<<<< HEAD
 	SetDlgItemText(Print_Edit, omg);
 	ex.Format(L"%g", m_value_two);
 	a.push_back(ex);
@@ -260,4 +298,13 @@ void CTestCalcDlg::OnBnClickedDivision()
 	a.push_back(ex);
 	count++;
 	muldicount++;
+=======
+	SetDlgItemText(Print_EDIT, omg);
+	ex.Format(L"%g", m_value_two);
+	a.push_back(ex);
+	count++;
+	ex = "-";
+	a.push_back(ex);
+	count++;
+>>>>>>> PLMA
 }

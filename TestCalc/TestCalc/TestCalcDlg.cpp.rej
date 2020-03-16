@@ -1,0 +1,11 @@
+diff a/TestCalc/TestCalc/TestCalcDlg.cpp b/TestCalc/TestCalc/TestCalcDlg.cpp	(rejected hunks)
+@@ -173,6 +173,6 @@
+ 		}
+ 		SetDlgItemText(Print_EDIT, str2 + number_str); //str�� ����� ���� ���ڰ��� ���� ���
+ 	}
+-
+ 	return CDialogEx::OnCommand(wParam, lParam);
+-}
++
++}
+\ No newline at end of file
