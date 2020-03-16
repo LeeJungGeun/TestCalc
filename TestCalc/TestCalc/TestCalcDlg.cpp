@@ -70,11 +70,10 @@ BEGIN_MESSAGE_MAP(CTestCalcDlg, CDialogEx)
 
 	ON_BN_CLICKED(Minus, &CTestCalcDlg::OnBnClickedMinus)
 
-	ON_BN_CLICKED(IDC_BUTTON3, &CTestCalcDlg::OnBnClickedButton3)
-	ON_BN_CLICKED(IDC_BUTTON4, &CTestCalcDlg::OnBnClickedButton4)
 	ON_BN_CLICKED(Multiply, &CTestCalcDlg::OnBnClickedMultiply)
 	ON_BN_CLICKED(Division, &CTestCalcDlg::OnBnClickedDivision)
 
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestCalcDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -187,7 +186,6 @@ BOOL CTestCalcDlg::OnCommand(WPARAM wParam, LPARAM lParam)
 	return CDialogEx::OnCommand(wParam, lParam);
 }
 
-<<<<<<< HEAD
 void CTestCalcDlg::OnBnClickedPlus()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
@@ -253,7 +251,7 @@ void CTestCalcDlg::OnBnClickedMultiply()
 	SetDlgItemText(Print_EDIT, omg);
 }
 
-void CTestCalcDlg::OnBnClickedMinus()
+void CTestCalcDlg::OnBnClickedMinus(){
 
 	CString str, str2, omg;
 
@@ -333,3 +331,4 @@ void CTestCalcDlg::OnBnClickedDivision()
 	muldicount++;
 
 }
+

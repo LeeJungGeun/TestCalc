@@ -13,7 +13,7 @@
 class CTestCalcDlg : public CDialogEx
 {
 private:
-<<<<<<< HEAD
+
 	int m_value = 0; //숫자저장값
 	char m_step = 0; //확인변수
 	char m_operater_flag = 0; //기호
@@ -22,7 +22,7 @@ private:
 	CString ex;
 	int count = 1;
 
-=======
+
 	char m_operater_flag = 0;
 	char m_step = 0;
 	int m_count = 0;
@@ -37,7 +37,6 @@ private:
 	CString ex;
 	CString nulll;
 	// 생성입니다.
->>>>>>> 188d3ea5559d6914439cba6aa7bb8c4a2c44f5ad
 public:
 	void M_Operate(double m_vaule_two);
 
@@ -54,11 +53,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
 	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 
-<<<<<<< HEAD
-// 구현입니다.
-=======
-	// 구현입니다.
->>>>>>> 188d3ea5559d6914439cba6aa7bb8c4a2c44f5ad
+
 protected:
 	HICON m_hIcon;
 
@@ -67,19 +62,16 @@ protected:
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
-<<<<<<< HEAD
+
 	
 	void OnBnClickedPlus();
 	DECLARE_MESSAGE_MAP()
 
 public:
 	afx_msg void OnBnClickedMinus();
-};
-=======
-
-	DECLARE_MESSAGE_MAP()
-public:
 	afx_msg void OnBnClickedMultiply();
 	afx_msg void OnBnClickedDivision();
-}
->>>>>>> 188d3ea5559d6914439cba6aa7bb8c4a2c44f5ad
+	afx_msg void OnBnClickedButton1();
+};
+
+	
